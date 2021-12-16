@@ -1,0 +1,17 @@
+@using MusicSorter.Models;
+
+<h1>Here is a list of the albums in your collection:</h1>
+
+@if (@Model == null||@Model.Count == 0)
+{
+  <h3>No categories have been added yet!</h3>
+}else{
+@foreach (Album album in Model)
+{
+  <h3><a href='/album/@album.Id'>@album.AlbumName</a></h3>
+}
+
+}
+
+
+<p><a href='/album/new'>Create a new album</a></p>
